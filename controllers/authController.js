@@ -1,8 +1,7 @@
 const jwt = require("jsonwebtoken");
 const passport = require("passport");
 
-// TODO: need to import the secret as instead of hardcoding it here
-const jwtSecret = "temp_secret";
+const jwtSecret = process.env.JWT_SECRET;
 
 const generateJWTToken = (user) => {
   return jwt.sign(user, jwtSecret, {

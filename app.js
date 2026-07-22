@@ -10,7 +10,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport"); // used for authentication
 
 const app = express();
-app.use(morgan(`common`)); // TODO: maybe change to dev (https://expressjs.com/en/resources/middleware/morgan/)
+app.use(morgan(`common`)); // TODO: substitute morgan with pino or winston for better logging
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); // urlencoded payloads
 app.use(require("./middleware/cors"));
